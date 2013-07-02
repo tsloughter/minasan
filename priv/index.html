@@ -81,11 +81,17 @@
             </script>
 
             <script type="text/x-handlebars" data-template-name="chat">
-              {{#each controller}}
-                <div class="phrase">
-                  {{text}}
-                </div>
-              {{/each}}
+              <table class="table table-condensed table-striped">
+                <tbody>
+                {{#each controller}}
+                  <tr>
+                    <td class="phrase">
+                      {{text}}
+                    </td>
+                  </tr>
+                {{/each}}
+                </tbody>
+              </table>
               <div class="form-inline">
                 {{view App.MessageFieldView valueBinding="newMessage" class="input-xlarge"}}
                 <button class="btn btn-primary" {{action doSend}}>Send</button>
