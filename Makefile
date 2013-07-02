@@ -1,4 +1,3 @@
-
 REBAR = rebar
 APP = quick_chat
 
