@@ -17,6 +17,6 @@ Make sure to have Erlang installed (tested with `R15B02`)
     $ ./dev/start
     $ open http://localhost:8080
 
-## License:
+## License
 
 See the `LICENSE` file.
