@@ -1,6 +1,7 @@
 # Minasan
 
-Group chat powered by Erlang and Cowboy, Ember.js and Websockets.
+Group chat powered by Erlang and Cowboy, Ember.js and Websockets. The layout is
+also responsive/mobile-friendly!
 
 Forked from <https://github.com/oruen/quick_chat>, Ember.js app by
 [@Deteam](https://github.com/deteam).
