@@ -1,5 +1,5 @@
 REBAR = rebar
-APP = quick_chat
+APP = minasan
 
 default: compile
 

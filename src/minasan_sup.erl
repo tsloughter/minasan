@@ -1,8 +1,8 @@
 %%
-%% quick_chat_sup.erl
-%% quick_chat supervisor
+%% minasan_sup.erl
+%% minasan supervisor
 %%
--module(quick_chat_sup).
+-module(minasan_sup).
 
 -behaviour(supervisor).
 
@@ -27,6 +27,6 @@ start_link() ->
 %% ~~~~~~~~~~~~~~~~~~~~
 
 init([]) ->
-    Server = ?CHILD(quick_chat_server, worker),
+    Server = ?CHILD(minasan_server, worker),
     {ok, { {one_for_one, 5, 10}, [Server]} }.
 

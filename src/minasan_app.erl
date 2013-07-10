@@ -1,8 +1,8 @@
 %%
-%% quick_chat_app.erl
-%% quick_chat application
+%% minasan_app.erl
+%% minasan application
 %%
--module(quick_chat_app).
+-module(minasan_app).
 
 -behaviour(application).
 
@@ -16,14 +16,14 @@
 start(_StartType, _StartArgs) ->
     Dispatch = cowboy_router:compile([
       {'_', [
-        {"/ws", quick_chat_ws_handler, []},
+        {"/ws", minasan_ws_handler, []},
         {"/", cowboy_static, [
-          {directory, {priv_dir, quick_chat, []}},
+          {directory, {priv_dir, minasan, []}},
           {file, <<"index.html">>},
           {mimetypes, {fun mimetypes:path_to_mimes/2, default}}
         ]},
         {"/[...]", cowboy_static, [
-          {directory, {priv_dir, quick_chat, []}},
+          {directory, {priv_dir, minasan, []}},
           {mimetypes, {fun mimetypes:path_to_mimes/2, default}}
         ]}
       ]}
@@ -31,7 +31,7 @@ start(_StartType, _StartArgs) ->
     {ok, _} = cowboy:start_http(http, 100, [{port, 8080}], [
       {env, [{dispatch, Dispatch}]}
     ]),
-    quick_chat_sup:start_link().
+    minasan_sup:start_link().
 
 stop(_State) ->
     ok.

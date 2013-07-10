@@ -1,19 +1,22 @@
-# Naive Websocket Chat #
+# Minasan
 
-Chat application using Cowboy Erlang server and Ember.js communicating via
-WebSockets.  Ember.js app by [@Deteam](https://github.com/deteam).
+Group chat powered by Erlang and Cowboy, Ember.js and Websockets.
 
-## Installation ##
+Forked from <https://github.com/oruen/quick_chat>, Ember.js app by
+[@Deteam](https://github.com/deteam).
 
-- Make sure to have Erlang installed (tested with R15B02)
-- `git submodule update --init`
-- `make all`
+## Installation
 
-## Usage ##
+Make sure to have Erlang installed (tested with `R15B02`)
 
-- Run server: `./dev/start`
-- Go to `http://localhost:8080/index.html`
+    $ git submodule update --init
+    $ make all
 
-## License: ##
+## Usage
+
+    $ ./dev/start
+    $ open http://localhost:8080
+
+## License:
 
 See the `LICENSE` file.

@@ -1,8 +1,8 @@
 %%
-%% quick_chat_server.erl
-%% quick_chat server
+%% minasan_server.erl
+%% minasan server
 %%
--module(quick_chat_server).
+-module(minasan_server).
 -behaviour(gen_server).
 -define(SERVER, ?MODULE).
 
