@@ -1,6 +1,6 @@
 (function() {
 
-  window.App = Ember.Application.create({
+  window.Minasan = Ember.Application.create({
     socketUrl: "ws://0.0.0.0:8080/ws",
     ready: function() {
       return console.log("Ember namespace is ok");
@@ -51,7 +51,7 @@
           doLogin: function(router, context) {
             var login, socket;
             login = router.get("applicationController.login");
-            socket = new WebSocket(App.get("socketUrl"));
+            socket = new WebSocket(Minasan.get("socketUrl"));
             return socket.onopen = function() {
               socket.send("login:" + login);
               router.set("applicationController.socket", socket);
@@ -86,7 +86,7 @@
 
   $(function() {
     console.log("Init app");
-    return App.initialize();
+    return Minasan.initialize();
   });
 
 }).call(this);

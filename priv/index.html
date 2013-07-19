@@ -67,7 +67,7 @@
             <!-- ember -->
             <script type="text/x-handlebars" data-template-name="login">
               <div class="form-inline">
-                {{view App.LoginFieldView valueBinding="login" placeholder="Nickname" class="input-medium"}}
+                {{view Minasan.LoginFieldView valueBinding="login" placeholder="Nickname" class="input-medium"}}
                 <button class="btn btn-primary" {{action doLogin}}>Login to chat</button>
               </div>
             </script>
@@ -85,7 +85,7 @@
                 </tbody>
               </table>
               <div class="form-inline">
-                {{view App.MessageFieldView valueBinding="newMessage" class="input-xlarge"}}
+                {{view Minasan.MessageFieldView valueBinding="newMessage" class="input-xlarge"}}
                 <button class="btn btn-primary" {{action doSend}}>Send</button>
               </div>
             </script>
