@@ -24,90 +24,86 @@
   </head>
 
   <body class="index">
+    <script type="text/x-handlebars" data-template-name="application">
 
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container-fluid">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="#">minasan</a>
-          <div class="nav-collapse collapse">
-            <p class="navbar-text pull-right">
-              Logged in as <a href="#" class="navbar-link">Username</a>
-            </p>
-            <ul class="nav">
-              <li class="active"><a href="#">Addons</a></li>
-              <li><a href="#about">API</a></li>
-              <li><a href="#contact">The Lounge</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
+      <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class="container-fluid">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="#">minasan</a>
+            <div class="nav-collapse collapse">
+              <p class="navbar-text pull-right">
+                Logged in as <a href="#" class="navbar-link">Username</a>
+              </p>
+              <ul class="nav">
+                <li class="active"><a href="#">Addons</a></li>
+                <li><a href="#about">API</a></li>
+                <li><a href="#contact">The Lounge</a></li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="container-fluid">
-      <div class="row-fluid">
-        <div class="span3">
-          <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-              <li class="nav-header">People</li>
-              <li class="active"><a href="#">mattonrails</a></li>
-              <li><a href="#">glenngillen</a></li>
-              <li><a href="#">rkst</a></li>
-              <li><a href="#">ryandotsmith</a></li>
-            </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
-        <div class="span9">
-          <div class="hero-unit">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="span3">
+            <div class="well sidebar-nav">
+              <ul class="nav nav-list">
+                <li class="nav-header">People</li>
+                <li class="active"><a href="#">mattonrails</a></li>
+                <li><a href="#">glenngillen</a></li>
+                <li><a href="#">rkst</a></li>
+                <li><a href="#">ryandotsmith</a></li>
+              </ul>
+            </div><!--/.well -->
+          </div><!--/span-->
+          <div class="span9">
+            <div class="hero-unit">
 
-            <!-- ember -->
-            <script type="text/x-handlebars" data-template-name="login">
-              <div class="form-inline">
-                {{view Minasan.LoginFieldView valueBinding="login" placeholder="Nickname" class="input-medium"}}
-                <button class="btn btn-primary" {{action doLogin}}>Login to chat</button>
-              </div>
-            </script>
-
-            <script type="text/x-handlebars" data-template-name="chat">
-              <table class="table table-condensed table-striped">
-                <tbody>
-                {{#each controller}}
-                  <tr>
-                    <td class="phrase">
-                      {{text}}
-                    </td>
-                  </tr>
-                {{/each}}
-                </tbody>
-              </table>
-              <div class="form-inline">
-                {{view Minasan.MessageFieldView valueBinding="newMessage" class="input-xlarge"}}
-                <button class="btn btn-primary" {{action doSend}}>Send</button>
-              </div>
-            </script>
-
-            <script type="text/x-handlebars" data-template-name="application">
-              <h2>minasan</h2>
               {{outlet}}
-            </script>
-            <!-- /ember -->
 
-          </div>
-        </div><!--/span-->
-      </div><!--/row-->
+            </div>
+          </div><!--/span-->
+        </div><!--/row-->
 
-      <hr>
+        <hr>
 
-      <footer>
-        <p>&copy; minasan </p>
-      </footer>
+        <footer>
+          <p>&copy; minasan </p>
+        </footer>
 
-    </div><!--/.fluid-container-->
+      </div><!--/.fluid-container-->
 
+    </script>
+    <script type="text/x-handlebars" data-template-name="login">
+      <div class="form-inline">
+        {{view Minasan.LoginFieldView valueBinding="login" placeholder="Nickname" class="input-medium"}}
+        <button class="btn btn-primary" {{action doLogin}}>Login to chat</button>
+      </div>
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="chat">
+      <table class="table table-condensed table-striped">
+        <tbody>
+        {{#each controller}}
+          <tr>
+            <td class="phrase">
+              {{text}}
+            </td>
+          </tr>
+        {{/each}}
+        </tbody>
+      </table>
+      <div class="form-inline">
+        {{view Minasan.MessageFieldView valueBinding="newMessage" class="input-xlarge"}}
+        <button class="btn btn-primary" {{action doSend}}>Send</button>
+      </div>
+    </script>
   </body>
 </html>
 
