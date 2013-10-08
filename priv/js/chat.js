@@ -1,7 +1,7 @@
 (function() {
-
+  var host = location.origin.replace(/^http/, 'ws');
   window.Minasan = Ember.Application.create({
-    socketUrl: "ws://0.0.0.0:8080/ws",
+    socketUrl: host+"/ws",
     ready: function() {
       return console.log("Ember namespace is ok");
     },
@@ -90,4 +90,3 @@
   });
 
 }).call(this);
-
