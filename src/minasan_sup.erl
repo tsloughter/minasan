@@ -12,9 +12,6 @@
 %% Supervisor callbacks
 -export([init/1]).
 
-%% Helper macro for declaring children of supervisor
--define(CHILD(I, Type), {I, {I, start_link, []}, permanent, 5000, Type, [I]}).
-
 %% ~~~~~~~~~~~~~
 %% API functions
 %% ~~~~~~~~~~~~~
@@ -27,6 +24,32 @@ start_link() ->
 %% ~~~~~~~~~~~~~~~~~~~~
 
 init([]) ->
-    Server = ?CHILD(minasan_server, worker),
-    {ok, { {one_for_one, 5, 10}, [Server]} }.
+    RestartStrategy = one_for_one,
+    MaxRestarts = 1000,
+    MaxSecondsBetweenRestarts = 3600,
 
+    SupFlags = {RestartStrategy, MaxRestarts, MaxSecondsBetweenRestarts},
+
+    Dispatch =
+        cowboy_router:compile([
+                              {'_', [
+                                    {"/ws", minasan_ws_handler, []},
+                                    {"/", cowboy_static, [
+                                                         {directory, {priv_dir, minasan, []}},
+                                                         {file, <<"index.html">>},
+                                                         {mimetypes, {fun mimetypes:path_to_mimes/2, default}}
+                                                         ]},
+                                    {"/[...]", cowboy_static, [
+                                                              {directory, {priv_dir, minasan, []}},
+                                                              {mimetypes, {fun mimetypes:path_to_mimes/2, default}}
+                                                              ]}
+                                    ]}
+                              ]),
+
+    {ok, ListenPort} = application:get_env(http_port),
+
+    ChildSpecs = [ranch:child_spec(minasan_cowboy, 100,
+                                   ranch_tcp, [{port, ListenPort}],
+                                   cowboy_protocol, [{env, [{dispatch, Dispatch}]}])],
+
+    {ok, {SupFlags, ChildSpecs}}.

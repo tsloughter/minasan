@@ -1,1 +1,1 @@
-web: erl -pa ebin deps/*/ebin -noshell -noinput -s minasan
+web: _rel/bin/minasan -noshell -minasan http_port $PORT

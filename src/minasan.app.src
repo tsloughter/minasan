@@ -1,18 +1,15 @@
-{application, minasan, [
-  {description, ""},
+{application, minasan,
+ [{description, ""},
   {vsn, "1"},
   {registered, []},
-  {modules, [
-    minasan_app,
-    minasan_sup,
-    minasan_server
-  ]},
+  {modules, []},
   {applications, [
-    kernel,
-    stdlib
-  ]},
-  {mod, {
-    minasan_app, []
-  }},
+                 kernel
+                 ,stdlib
+                 ,cowboy
+                 ,mimetypes
+                 ,gproc
+                 ]},
+  {mod, {minasan_app, []}},
   {env, []}
-]}.
+ ]}.
