@@ -8,16 +8,10 @@ Forked from <https://github.com/oruen/quick_chat>, Ember.js app by
 
 ![screenshot](http://f.cl.ly/items/0x0L3b2k1q1M1b2Q2d23/minasan.png)
 
-## Installation
-
-Make sure to have Erlang installed (tested with `R15B02`)
-
-    $ git submodule update --init
-    $ make all
-
 ## Usage
 
-    $ ./dev/start
+    $ make
+    $ make console
     $ open http://localhost:8080
 
 ## License
