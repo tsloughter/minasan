@@ -1,4 +1,4 @@
-.rebarinfo
+.rebar
 .eunit
 deps
 priv
@@ -11,4 +11,3 @@ ebin
 _rel
 erl_crash.dump
 log
-

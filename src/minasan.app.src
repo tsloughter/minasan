@@ -1,13 +1,12 @@
 {application, minasan,
  [{description, ""},
-  {vsn, "1"},
+  {vsn, "3"},
   {registered, []},
   {modules, []},
   {applications, [
                  kernel
                  ,stdlib
                  ,cowboy
-                 ,mimetypes
                  ,gproc
                  ]},
   {mod, {minasan_app, []}},

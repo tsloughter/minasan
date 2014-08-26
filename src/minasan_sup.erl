@@ -30,26 +30,6 @@ init([]) ->
 
     SupFlags = {RestartStrategy, MaxRestarts, MaxSecondsBetweenRestarts},
 
-    Dispatch =
-        cowboy_router:compile([
-                              {'_', [
-                                    {"/ws", minasan_ws_handler, []},
-                                    {"/", cowboy_static, [
-                                                         {directory, {priv_dir, minasan, []}},
-                                                         {file, <<"index.html">>},
-                                                         {mimetypes, {fun mimetypes:path_to_mimes/2, default}}
-                                                         ]},
-                                    {"/[...]", cowboy_static, [
-                                                              {directory, {priv_dir, minasan, []}},
-                                                              {mimetypes, {fun mimetypes:path_to_mimes/2, default}}
-                                                              ]}
-                                    ]}
-                              ]),
-
-    {ok, ListenPort} = application:get_env(http_port),
-
-    ChildSpecs = [ranch:child_spec(minasan_cowboy, 100,
-                                   ranch_tcp, [{port, ListenPort}],
-                                   cowboy_protocol, [{env, [{dispatch, Dispatch}]}])],
+    ChildSpecs = [],
 
     {ok, {SupFlags, ChildSpecs}}.
