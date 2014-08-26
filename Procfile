@@ -1,1 +1,1 @@
-web: _rel/minasan/bin/minasan foreground
+web: RELX_REPLACE_OS_VARS=true ./bin/minasan foreground
