@@ -1,1 +1,1 @@
-web: RELX_REPLACE_OS_VARS=true ./bin/minasan foreground
+web: _rel/bin/minasan -noshell -minasan http_port $PORT
