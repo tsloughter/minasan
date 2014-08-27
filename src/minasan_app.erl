@@ -36,6 +36,6 @@ start_cowboy() ->
                               ]),
 
     ListenPort = os:getenv("PORT"),
-    io:format("PORT ~p~n", [ListenPort]),
+
     cowboy:start_http(minasan_cowboy, 100,
                      [{port, list_to_integer(ListenPort)}], [{env, [{dispatch, Dispatch}]}]).
