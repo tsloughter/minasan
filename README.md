@@ -9,6 +9,7 @@ Forked from <https://github.com/oruen/quick_chat>, Ember.js app by [@Deteam](htt
 
 ## Usage
 
+    $ ./rebar update
     $ ./rebar compile
     $ ./relx
     $ open http://localhost:8080
