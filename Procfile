@@ -1,1 +1,1 @@
-web: ./bin/minasan -noshell
+web: ./bin/minasan foreground

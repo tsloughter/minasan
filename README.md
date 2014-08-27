@@ -18,7 +18,7 @@ Forked from <https://github.com/oruen/quick_chat>, Ember.js app by [@Deteam](htt
 
 Suggested method requires <https://github.com/heroku/hk> and <https://github.com/tsloughter/hk-slug>
 
-    $ ./relx -i true --dev-mode false tar
+    $ ./relx -i true --dev-mode false release tar
     $ hk slug _rel/minasan/minasan-0.0.1.tar.gz
 
 ## License
