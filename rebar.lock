@@ -1,0 +1,9 @@
+[{<<"gproc">>,<<"0.3.1">>,
+  {git,"git://github.com/uwiger/gproc.git",
+       "54a3b200155e94f1bd9afc752e4dd4630b2508b1"}},
+ {<<"ranch">>,<<"1.0.0">>,
+  <<"https://s3.amazonaws.com/rebar_packages/generic/6.1/ranch/1.0.0/ranch-1.0.0.tar.gz">>},
+ {<<"cowlib">>,<<"1.0.0">>,
+  <<"https://s3.amazonaws.com/rebar_packages/generic/6.1/cowlib/1.0.0/cowlib-1.0.0.tar.gz">>},
+ {<<"cowboy">>,<<"1.0.0">>,
+  <<"https://s3.amazonaws.com/rebar_packages/generic/6.1/cowboy/1.0.0/cowboy-1.0.0.tar.gz">>}].
