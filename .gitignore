@@ -1,3 +1,5 @@
+_deps
+.rebar3
 .rebar
 .eunit
 deps
